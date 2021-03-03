@@ -1,0 +1,33 @@
+table {
+    border-collapse: collapse;
+    text-align: center;
+}
+td {
+    border: 2px solid #e7e7e7;
+    padding: 10px;
+}
+img {
+    border-radius: 20px;
+}
+#main {
+    background-color: black;
+    color: white;
+}
+#soul{
+    background-color: rgb(214,146,62);
+}
+#time{
+    background-color: rgb(2,128,1);
+}
+#space{
+    background-color: rgb(1,87,146);
+}
+#mind{
+    background-color: rgb(254,255,3);
+}
+#reality{
+    background-color: rgb(193,43,47);
+}
+#power{
+    background-color: rgb(129,117,183);
+}
