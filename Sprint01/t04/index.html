@@ -4,6 +4,7 @@
         <title>Handbook</title>
         <meta name="description" content="t04. Handbook">
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -15,6 +16,10 @@
                 <li>Link tags</li>
             </ul>
             <li>CSS</li>
+            <ul>
+                <li>References</li>
+                <li>Selectors</li>
+            </ul>
             <li>Protocols
                 <ul>
                     <li>Description</li>
@@ -97,7 +102,7 @@
             </div>
         </div>
         <h1>CSS</h1>
-        <h2>References</h2>
+        <h2>Properties</h2>
         <div class="card_wrapper">
             <div class="card">
                 <div class="card_text">
@@ -137,7 +142,165 @@
                 </div>
             </div>
         </div>
+        <h2>Selectors</h2>
+        <div class="card_wrapper">
+            <div class="card">
+                <div class="card_text">
+                    <span>.element</span><br>
+                    <span>Selects all elements with class="name1"</span>
+                    <span>Example: .name1</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span>.class1.class2</span><br>
+                    <span>Selects all elements with both name1 and name2 set within its class attribute</span>
+                    <span>Example: .name1.name2</span><br>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span>.class1 .class2</span><br>
+                    <span>Selects all elements with name2 that is a descendant of an element with name1</span>
+                    <span>Example: .name1 .name2</span><br>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span>#id</span><br>
+                    <span>Selects the element with id="firstname"</span>
+                    <span>Example: #firstname</span><br>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span>*</span><br>
+                    <span>Selects all elements</span>
+                    <span>Example: *</span><br>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span>element</span><br>
+                    <span>Selects all &lt;p&gt; elements</span>
+                    <span>Example: p</span><br>
+                </div>
+            </div>
+        </div>
         <h1>Protocols</h1>
-
+        <h2>Description</h2>
+        <span>A network protocol is an established set of rules that determine how data is transmitted 
+            between different devices in the same network. Essentially, it allows connected devices to 
+            communicate with each other, regardless of any differences in their internal processes, 
+            structure or design.</span>
+        <h2>HTTP/HTTPS</h2>
+        <h3>Request methods</h3>
+        <div class="card_wrapper">
+            <div class="card">
+                <div class="card_text">
+                    <span><code>GET</code></span><br>
+                    <span>The <code>GET</code> method requests a representation of the specified resource. 
+                        Requests using <code>GET</code> should only retrieve data.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span><code>HEAD</code></span><br>
+                    <span>The <code>HEAD</code> method asks for a response identical to that of a 
+                        <code>GET</code> request, but without the response body.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span><code>POST</code></span><br>
+                    <span>The POST method is used to submit an entity to the specified resource, 
+                        often causing a change in state or side effects on the server.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span><code>PUT</code></span><br>
+                    <span>The <code>PUT</code> method replaces all current representations of the target 
+                        resource with the request payload.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span><code>DELETE</code></span><br>
+                    <span>The <code>DELETE</code> method deletes the specified resource.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <span><code>CONNECT</code></span><br>
+                    <span>The <code>CONNECT</code> method establishes a tunnel to the server identified by the target resource.</span>
+                </div>
+            </div>
+        </div>
+        <h3>Response status codes</h3>
+        <!--Informational responses (100–199)
+        Successful responses (200–299)
+        Redirects (300–399)
+        Client errors (400–499)
+        Server errors (500–599)-->
+        <ol>
+            <li>Informational responses (100–199)</li>
+            <li>Successful responses (200–299)</li>
+            <li>Redirects (300–399)</li>
+            <li>Client errors (400–499)</li>
+            <li>Server errors (500–599)</li>
+        </ol>
+        <h2>DNS<br>(record types)</h2>
+        <div class="card_wrapper">
+            <div class="card">
+                <div class="card_text">
+                    <b>Address Mapping record (A Record)</b><br>
+                    <span>also known as a DNS host record, stores a hostname 
+                        and its corresponding IPv4 address.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <b>IP Version 6 Address record (AAAA Record)</b><br>
+                    <span>stores a hostname and its corresponding IPv6 address.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <b>Canonical Name record (CNAME Record)</b><br>
+                    <span>can be used to alias a hostname to another hostname. When a 
+                        DNS client requests a record that contains a CNAME, which points 
+                        to another hostname, the DNS resolution process is repeated with 
+                        the new hostname.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <b>Mail exchanger record (MX Record)</b><br>
+                    <span>specifies an SMTP email server for the domain, used to route 
+                        outgoing emails to an email server.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <b>Name Server records (NS Record)</b><br>
+                    <span>specifies that a DNS Zone, such as “example.com” is delegated 
+                        to a specific Authoritative Name Server, and provides the address 
+                        of the name server.</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_text">
+                    <b>Reverse-lookup Pointer records (PTR Record)</b><br>
+                    <span>allows a DNS resolver to provide an IP address and receive a 
+                        hostname (reverse DNS lookup).</span>
+                </div>
+            </div>
+        </div>
+        <h2>IP</h2>
+        <span>An Internet Protocol address (IP address) is a numerical label assigned 
+            to each device connected to a computer network that uses the Internet 
+            Protocol for communication. An IP address serves two main functions: 
+            host or network interface identification and location addressing.</span>
     </body>
 </html>
