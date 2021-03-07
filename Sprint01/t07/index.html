@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Oscorp</title>
+        <meta name="description" content="t07. Oscorp">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="style.css">
+        <meta name="author" content="Artem Nevodnichiy">
+    </head>
+    <body>
+        <div class="header">
+            <div id="logo">
+                <img src="assets/images/logo.png" alt="Oscorp">
+            </div>
+            <div id="mid_stuff">
+                <a href="https://github.com/Gazaris"><span>ABOUT</span></a>
+                <a href="index.html"><span>CATALOG</span></a>
+                <a href="https://github.com/Gazaris"><span>CONTACT</span></a>
+                <input id="search" type="search" placeholder="Search">
+            </div>
+            <div id="phone">
+                <span>Phone: +8(800)555-35-35</span>
+            </div>
+        </div>
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="index.html">Catalog</a>
+        </div> 
+        <div class="main_filters">
+            <h2>Catalog</h2>
+            <div class="box">
+                <input type="checkbox" id="first">
+                <label class="option" for="first">Weapon</label>
+                <input type="checkbox" id="second">
+                <label class="option" for="second">Alien</label>
+                <input type="checkbox" id="third">
+                <label class="option" for="third">Green</label>
+            </div>
+        </div>
+        <div class="main_block"> 
+            <div class="filters">
+                <form>
+                    <h3>Chance of Lethal Effect</h3>
+                    <div class="checkbox">
+                        <input type="checkbox" id="unlikely" class="custom-checkbox">
+                        <label for="unlikely"> Unlikely (0-20%)</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="mild" class="custom-checkbox">
+                        <label for="mild"> Mild (20-40%)</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="moderate" class="custom-checkbox">
+                        <label for="moderate"> Moderate (40-60%)</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="likely" class="custom-checkbox">
+                        <label for="likely"> Likely (60-80%)</label>
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" id="certain" class="custom-checkbox">
+                        <label for="certain"> Certain (80-100%)</label>
+                    </div>
+                </form>
+                <form>
+                    <h3>Price</h3>
+                    <input type="range" id="range" min="0" max="9999" value="0"><br>
+                    <div id="rangenum"> 
+                        <label id="min">0</label>
+                        <label id="max">9999</label>
+                    </div>
+                </form>
+            </div>
+            <div class="main-content">
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/spider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Radioacive spider</a>
+                        <span class="price">3499.99$</span>
+                        <span class="not-available">not available</span>
+                        <input class="non-available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_pumpkin_bomb.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin pumpkin bomb</a>
+                        <span class="price">214.50$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_glider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin glider</a>
+                        <span class="price">9200.00$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/spider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Radioacive spider</a>
+                        <span class="price">3499.99$</span>
+                        <span class="not-available">not available</span>
+                        <input class="non-available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_pumpkin_bomb.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin pumpkin bomb</a>
+                        <span class="price">214.50$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_glider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin glider</a>
+                        <span class="price">9200.00$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/spider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Radioacive spider</a>
+                        <span class="price">3499.99$</span>
+                        <span class="not-available">not available</span>
+                        <input class="non-available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_pumpkin_bomb.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin pumpkin bomb</a>
+                        <span class="price">214.50$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_glider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin glider</a>
+                        <span class="price">9200.00$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/spider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Radioacive spider</a>
+                        <span class="price">3499.99$</span>
+                        <span class="not-available">not available</span>
+                        <input class="non-available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_pumpkin_bomb.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin pumpkin bomb</a>
+                        <span class="price">214.50$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+                <div class="card">
+                    <a href="card.html"><img src="assets/images/goblin_glider.jpg" alt="img"></a>
+                    <div>
+                        <a href="card.html">Goblin glider</a>
+                        <span class="price">9200.00$</span>
+                        <span class="available">available</span>
+                        <input class="available" type="button" value="BUY">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div id="foot-menu">
+                <span>Copyright © 2021 | OSCORP | All Rights Reserved</span>
+                <div>
+                    <a href="#">Terms of Service</a>
+                    <span>&nbsp;|&nbsp;</span>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

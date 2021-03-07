@@ -13,14 +13,6 @@ body{
     text-align: center;
 }
 
-input[type=checkbox] {
-    display: none;
-    width: 400px;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-}
-
 .box {
     display: flex;
     flex-wrap: wrap;
@@ -43,15 +35,21 @@ input[type=checkbox] {
     color: white;
     border: 1px solid #585893;
 }
+input[type=checkbox] {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
 input[type="checkbox"]:checked + .option{
-    background: #585893;;
+    background: #585893;
     color: white;
 }
 input[type="checkbox"]:checked + .option:after{
     content: '\2713';
     padding-left: 10px;
 }
-
 .input {
     display: flex;
 }
