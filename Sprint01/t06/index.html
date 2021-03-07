@@ -9,11 +9,36 @@
     </head>
     <body>
         <h1 id="firsthead">Superhero request form</h1>
-        <h1 id="secondhead">What do you need help with?</h1>
-        <div class="firstrowcheck">
-            <input type="checkbox" id="1"><labe> DEFEAT A VILLIAN </text>
-            <input type="checkbox" id="2"><text> SAVE A CIVILIAN </text>
-            <input type="checkbox" id="3"><text> STOP A ROBBERY </text>
-        </div>
+        <form>
+            <h1 id="secondhead">What do you need help with?</h1>
+            <div class="box">
+                <input type="checkbox" id="first">
+                <label class="option" for="first">DEFEAT A VILLAIN</label>
+                <input type="checkbox" id="second">
+                <label class="option" for="second">SAVE A CIVILIAN</label>
+                <input type="checkbox" id="third">
+                <label class="option" for="third">STOP A ROBBERY</label>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="fourth">
+                <label class="option" for="fourth">PREVENT AN APOCALYPSE</label>
+                <input type="checkbox" id="fifth">
+                <label class="option" for="fifth">TRAIN A SIDEKICK</label>
+            </div>
+            <div class="box">
+                <input type="checkbox" id="sixth">
+                <label class="option" for="sixth">OTHER STUFF</label>
+            </div>
+
+            <div class="input">
+                <input class="inputdata" type="text" id="details" name="jobDetails" placeholder="Job details">
+            </div><br>
+            <div class="input">
+                <input class="inputdata" type="text" id="name" name="name" placeholder="Name">
+                <input class="inputdata" type="text" id="email" name="email" placeholder="Email">
+            </div>
+            <input type="submit" id="send" style="display: none">
+            <label class="send" for="send">SEND</label>
+        </form>
     </body>
 </html>
