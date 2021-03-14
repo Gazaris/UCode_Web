@@ -1,61 +1,55 @@
 'use strict';
 
-function menu(name) {
-    let menu = new Map();
-    menu.set('Roll Double fish', 249);
-    menu.set('Roll Double cheese', 359);
-    menu.set('Philadelphia De Luxe with salmon', 459);
-    menu.set('Philadelphia De Luxe with tuna', 599);
-    menu.set('Philadelphia De Luxe with eel', 99);
-    menu.set('Philadelphia with sesame and salmon', 129);
-    if(name === 'all') {
-        let all = '';
-        for(const item of menu)
-            all = all.concat(item + ' uah\n');
-        alert(all);
-    }
-    else
-        alert(menu.get(name) + ' uah');
-}
-
 function guestList(name, state) {
     let guests = new Set();
-    guests.add('Liza');
-    guests.add('Kolya');
-    guests.add('Nazar');
-    guests.add('Slava');
-    guests.add('Artem');
-    guests.add('Sasha');
-    guests.add('Yana');
-    guests.add('Anton');
-    guests.add('Anton2');
-    guests.add('Sanya');
-    guests.add('Ilya');
-    guests.add('Leha');
-    guests.add('Vova');
-    guests.add('Vlad');
-    guests.add('Jeka');
-    guests.add('Vitalya');
-    guests.add('Pasha');
-    guests.add('Ira');
-    guests.add('Kostya');
-    guests.add('Serezha');
-    guests.add('Misha');
-    guests.add('Hamit');
-    guests.add('Mehdi');
-    guests.add('Toluwani');
+    guests.add('Zakhar');
+    guests.add('Nastia');
+    guests.add('Yekaterina');
+    guests.add('Mishka');
+    guests.add('Samuil');
+    guests.add('Yelisey');
+    guests.add('Inga');
+    guests.add('Nazariy');
+    guests.add('Kir');
+    guests.add('Dominika');
 
     if(state === 1) {
         let has = guests.has(name);
         if(has)
-            alert(`Yeah, you're on the list`);
-        else alert(`You're not on the list, go away!`);
+            alert('Yeah, you\'re on the list');
+        else alert('Sorry, i don\'t see you on the list');
     }
     if(state === 2) {
         let has = guests.delete(name);
         if(has)
-            alert(name + ` was successfully deleted!`);
-        else alert(name + ` is not on the list`);
+            alert(name + ' was successfully deleted!');
+        else alert(name + ' is not on the list');
+    }
+    if(state === 3) {
+        alert('I don\'t want to answer that')
+    }
+}
+
+function menu(name) {
+    let menu = new Map();
+    menu.set('Ramen', 199);
+    menu.set('Cacio e pepe', 300);
+    menu.set('Southern fried chicken', 299);
+    menu.set('Boeuf bourguignon', 399);
+    menu.set('Barramundi', 100);
+
+    if(name === 'all') {
+        let all = '';
+        for(const item of menu)
+            all = all.concat(item + '$\n');
+        alert(all);
+    }
+    else {
+        let yes = menu.get(name);
+        if(yes === undefined)
+            alert('Bro what are you even saying');
+        else
+            alert(yes + '$');
     }
 }
 
@@ -63,36 +57,36 @@ function bankVault(credits) {
     let bank = new WeakMap();
 
     const client1 = {
-        id: 1337,
-        name: 'Pasha',
+        id: 1234,
+        name: 'Zakhar',
         location: 'Ukraine'
     }
     const client2 = {
-        id: 69,
-        name: 'Lesha',
-        location: 'Russia'
+        id: 2345,
+        name: 'Nastia',
+        location: 'Spain'
     }
     const client3 = {
-        id: 420,
-        name: 'Dominik',
-        location: 'Hungary'
+        id: 3456,
+        name: 'Yekaterina',
+        location: 'US'
     }
     const client4 = {
-        id: 12345,
-        name: 'Florian',
-        location: 'France'
+        id: 4567,
+        name: 'Mishka',
+        location: 'Canada'
     }
     const client5 = {
-        id: 54321,
-        name: 'Liza',
-        location: 'Ukraine'
+        id: 5678,
+        name: 'Samuil',
+        location: 'Egypt'
     }
 
-    bank.set(client1, 5167490089632514);
-    bank.set(client2, 4112000011112222);
-    bank.set(client3, 1234123412341234);
-    bank.set(client4, 1111222233334444);
-    bank.set(client5, 4910258967483249);
+    bank.set(client1, 5876543210123456);
+    bank.set(client2, 7464992212223871);
+    bank.set(client3, 3093864630769983);
+    bank.set(client4, 4747166166666934);
+    bank.set(client5, 6021328126464675);
 
     if(bank.get(client1) === credits)
         alert(`Deposit box of ${credits}:\n\n` + `CLIENT ID: ${client1.id}\n` + `CLIENT NAME: ${client1.name}\n` + `CLIENT LOCATION: ${client1.location}`);
@@ -108,9 +102,6 @@ function bankVault(credits) {
 }
 
 function coinCollection() {
-    //
-    //  Здесь должен быть Set() а на месте guestList WeakSet(), но я уже не хочу менять
-    //
 
     let coinCollection = new WeakSet();
 
@@ -144,23 +135,30 @@ function coinCollection() {
     alert(`coin1:\nvalue: ${coin1.value}\nyear: ${coin1.year}\n\n` + `coin2:\nvalue: ${coin2.value}\nyear: ${coin2.year}\n\n` + `coin3:\nvalue: ${coin3.value}\nyear: ${coin3.year}\n\n` +`coin4:\nvalue: ${coin4.value}\nyear: ${coin4.year}\n\n` +`coin5:\nvalue: ${coin5.value}\nyear: ${coin5.year}`);
 }
 
-let dish = "";
-while(dish === "" || dish === null)
-    dish = prompt(`Testing Menu(Map) collection.\nType the name of dish or type 'all' to list all of the dishes`, `all`)
-menu(dish);
+//Testing guestList(Set) collection.
+// let guest = "";
+// while(!guest)
+//     guest = prompt(`Please enter your name:`, ``);
+// guestList(guest, 1);
+// guest = prompt(`\nWho do you want to delete (leave empty if no one):`, ``);
+// if(guest)
+//     guestList(guest, 2);
+// guest = prompt(`\nWhat else do you want to know?`, ``);
+// if(guest)
+//     guestList(guest, 3);
 
-let guest = "";
-while(!guest)
-    guest = prompt(`Testsing guestList(Set) collection.\nPlease enter your name:`, ``);
-guestList(guest, 1);
-guest = prompt(`Testsing guestList(Set) collection.\nWho do you want to delete (leave empty if not):`, ``);
-if(guest)
-    guestList(guest, 2);
+//Testing Menu(Map) collection.
+// let dish = "";
+// while(dish === "" || dish === null)
+//     dish = prompt(`Type the name of dish or type 'all' to list all of the dishes`, `all`)
+// menu(dish);
 
-let client = "";
-while(!client)
-    client = prompt(`Testsing bankVault(WeakMap) collection.\nPlease client credentials:`, `4910258967483249`);
-bankVault(+client);
+//Testing bankVault(WeakMap) collection.
+// let client = "";
+// while(!client)
+//     client = prompt(`Please client credentials:`, `5876543210123456`);
+// bankVault(+client);
 
-alert(`Testsing coinCollection(WeakSet) collection.\nPress OK to see all the coins`);
-coinCollection();
+//Testing coinCollection(WeakSet) collection.
+// alert(`Press OK to see all the coins`);
+// coinCollection();
