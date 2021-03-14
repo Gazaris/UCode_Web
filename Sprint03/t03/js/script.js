@@ -12,20 +12,20 @@ class Human {
         document.querySelector('#info').innerHTML = "I'm sleeping";
     }
     feed() {
-        document.querySelector('#info').innerHTML = "Nom nom nom";
+        document.querySelector('#info').innerHTML = "*burp*";
     }
 }
 
 class Superhero extends Human{
     fly() {
-        document.querySelector('#info').innerHTML = `I'm flying`;
+        document.querySelector('#info').innerHTML = `To the skies!`;
         setTimeout(()=> {
-            document.querySelector('#info').innerHTML = "Shazam!";
+            document.querySelector('#info').innerHTML = "Bu-Dum";
             document.querySelector('img').src = 'assets/images/dancing.gif';
         }, 10000);
     }
     fight () {
-        document.querySelector('#info').innerHTML ="Khhhh-chh..." + "Bang-g-g-g... Evil is defeated!";
+        document.querySelector('#info').innerHTML ="Up.." + " and Down!";
     }
 }
 
@@ -71,12 +71,12 @@ function loop() {
 function hero() {
     if(human.hero === false) {
         if(human.calories > 500) {
-            setFirstName("Shazam");
+            setFirstName("Thor");
             setLastName("");
             superhero.hero = true;
             human.hero = true;
             superhero.calories = human.calories;
-            document.querySelector('#info').innerHTML = "Shazam!";
+            document.querySelector('#info').innerHTML = "Bu-Dum!";
             document.querySelector('img').src = 'assets/images/transformation.gif';
             document.querySelector('#hero').innerText = 'Back to human';
             enableButtons();
@@ -95,7 +95,7 @@ function hero() {
         human.calories = superhero.calories;
         document.querySelector('#info').innerHTML = "I'm human";
         document.querySelector('img').src = 'assets/images/human.gif';
-        document.querySelector('#hero').innerText = 'Shazam!';
+        document.querySelector('#hero').innerText = 'Bu-Dum!';
         document.querySelector('#fly').disabled = true;
         document.querySelector('#fight').disabled = true;
         console.log(`superhero decreased to human`);
@@ -131,7 +131,7 @@ function feed() {
                 superhero.calories += 200;
                 setCalories(superhero.calories);
                 document.querySelector('img').src = 'assets/images/dancing.gif';
-                document.querySelector('#info').innerHTML = "Shazam!";
+                document.querySelector('#info').innerHTML = "Thor";
                 enableButtons();
             }, 10000)
             console.log(`feeding successful`);
@@ -149,7 +149,7 @@ function sleep() {
         disableButtons();
         human.sleepFor();
         setTimeout(() => {
-            document.querySelector('#info').innerHTML = "I'm awake now";
+            document.querySelector('#info').innerHTML = "I woke up";
             setTimeout(() => {
                 document.querySelector('img').src = 'assets/images/human.gif';
                 document.querySelector('#info').innerHTML = "I'm human";
@@ -163,10 +163,10 @@ function sleep() {
         disableButtons();
         superhero.sleepFor();
         setTimeout(() => {
-            document.querySelector('#info').innerHTML = "I'm awake now";
+            document.querySelector('#info').innerHTML = "I woke up";
             setTimeout(() => {
                 document.querySelector('img').src = 'assets/images/dancing.gif';
-                document.querySelector('#info').innerHTML = "Ready to rock!";
+                document.querySelector('#info').innerHTML = "Ready to smash!";
                 enableButtons();
             },2000);
             enableButtons();
@@ -181,7 +181,7 @@ function fly() {
     disableButtons();
     setTimeout(() => {
         document.querySelector('img').src = 'assets/images/dancing.gif'
-        document.querySelector('#info').innerHTML = "Shazam!"
+        document.querySelector('#info').innerHTML = "Up to the skies!"
         enableButtons();
     },10000);
     console.log(`flying successful`);
@@ -193,7 +193,7 @@ function fight() {
     disableButtons();
     setTimeout(() => {
         document.querySelector('img').src = 'assets/images/dancing.gif'
-        document.querySelector('#info').innerHTML = "Shazam!"
+        document.querySelector('#info').innerHTML = "Thor"
         enableButtons();
     },10000);
     console.log(`fighting successful`);
@@ -203,7 +203,7 @@ function setFirstName(name) {
     let firstName = document.getElementById('firstName');
     if(name === undefined) {
         while(firstName.innerText === "" || firstName.innerText === null) {
-            firstName.innerText = prompt("What's the FIRST name of your hero?", "Billy");
+            firstName.innerText = prompt("What's the FIRST name of your hero?", "Thor");
             let regex = RegExp('^[a-zA-Z]+$');
             if (firstName.innerText.length > 20 || !regex.test(firstName.innerText)) {
                 alert('ERROR: Accepts only one word, which consists only of Latin letters and its length does not exceed 20 characters.');
@@ -220,7 +220,7 @@ function setLastName(name) {
     let lastName = document.getElementById('lastName');
     if(name === undefined) {
         while(lastName.innerText === "" || lastName.innerText === null) {
-            lastName.innerText = prompt("What's the LAST name of your hero?", "Batson");
+            lastName.innerText = prompt("What's the LAST name of your hero?", "Odinson");
             let regex = RegExp('^[a-zA-Z]+$');
             if (lastName.innerTextlength > 20 || !regex.test(lastName.innerText)) {
                 alert('ERROR: Accepts only one word, which consists only of Latin letters and its length does not exceed 20 characters.');
@@ -250,7 +250,7 @@ function setGender() {
 function setAge() {
     let age = document.getElementById('age');
     while(age.innerText === "" || age.innerText === null) {
-        age.innerText = prompt("What's the age of your hero?", "14");
+        age.innerText = prompt("What's the age of your hero?", "35");
         let regex = RegExp(/^[1-9]|[0-9]{0,4}$/)
         if (age.innerText.length > 2 || !regex.test(age.innerText)) {
             alert('ERROR: Accepts only digits, cannot start with a zero, no more than 3 characters!');
