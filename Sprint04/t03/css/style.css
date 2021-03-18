@@ -1,0 +1,41 @@
+* { box-sizing:border-box }
+.main {
+  max-width: 90%;
+  position: relative;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.slide {
+  display: none;
+}
+
+.prev, .next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  height: 99.8%;
+  width: 4%;
+  top: 0;
+  text-align: center;
+  display: flex;
+  padding: 25% 16px 16px 16px;
+  color: #ffffff;
+  background: rgb(222, 222, 222);
+  font-weight: bold;
+  font-size: 32px;
+}
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(222, 222, 222,0.8);
+}

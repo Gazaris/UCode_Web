@@ -1,0 +1,58 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+#area {
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.stone {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    transform: rotate(45deg);
+    background-color: pink;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+  
+.stone[value="off"] { border: 2px solid black; }
+#red {
+    float: left;
+    left: 50%;
+    top: 10%;
+    background-color: red;
+}
+#green {
+    float: left;
+    left: 25%;
+    top: 50%;
+    background-color: green;
+}
+#blue {
+    left: 60%;
+    top: 60%;
+    background-color: blue;
+}
+#yellow {
+    left: 20%;
+    top: 23%;
+    background-color: yellow;
+}
+#pink {
+    left: 60%;
+    top: 30%;
+    background-color: pink;
+}
+#purple {
+    left: 75%;
+    top: 80%;
+    background-color: purple;
+}
