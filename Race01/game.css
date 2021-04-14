@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-/* @media (max-width: ) */
 body {
-  background: url("./background.jpeg");
-  background-position: 0 1%;
-  background-size: 2000px 1500px;
-  margin: 0;
+    background: url("./background.jpeg");
+    background-position: 0 1%;
+    background-size: 2000px 1500px;
+    margin: 0;
 }
 .area {
     position: absolute;
@@ -15,7 +14,7 @@ body {
     justify-content: center;
 }
 #my_area {
-    bottom: 0;
+	bottom: 0%;
 }
 #enemy_area {
     top: 0;
@@ -25,7 +24,6 @@ body {
     margin-right: 20%;
     margin-left: 20%;
     font-family: 'New Tegomin', sans-serif;
-    display: flex;
     float: left;
     position: absolute;
 }
@@ -38,9 +36,20 @@ body {
 .field .card {
     border-radius: 50%;
     height: 230px;
+    transition: 0.3s ease;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;  
+}
+.field .card .attack {
+    left: -165px;
+    bottom: 0;
 }
 .field .card .health {
     margin-left: 120px;
+    left: 10px;
+    bottom: 0px;
 }
 .field .card .card_img {
     border-radius: 50%; 
@@ -49,6 +58,25 @@ body {
 }
 #my_field {
     top: 0;
+}
+.my_card {
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.my_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px black;
+}
+.my_card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 50, 212, 0.8);
+}
+.my_card[disabled]:hover {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+.my_card[disabled] {
+    cursor: auto;
 }
 #enemy_field {
     bottom: 0;
@@ -64,25 +92,61 @@ body {
     bottom: 0;
     border: 5px dashed blue;
 }
+#my_hand .card {
+    background: #907ff1;
+    cursor: pointer;
+    transition: 0.2s ease;
+    transition-property: transform, box-shadow;
+    transform: translateY(0);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;    
+}
+#my_hand .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+#my_hand .card:active {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 50, 212, 0.8);
+}
 #enemy_hand {
     top: 0;
-    border: 5px dashed black;
-}
-#my_hand .card {
-    background: #d0ffc5;    
+    border: 5px dashed red;
 }
 #enemy_hand .card {
-    background: #ffbdbd;   
+    background: transparent;
+    background-image: url(./card_back.png);
+    border: none;
+    background-size: 171px 235px;
+    background-repeat: no-repeat;
+}
+#enemy_hand .card img {
+    visibility: hidden;
+}
+#enemy_hand .card .attack {
+    visibility: hidden;
+}
+#enemy_hand .card .health {
+    visibility: hidden;
+}
+#enemy_hand .card .mana_cost {
+    visibility: hidden;
+}
+#enemy_hand .card .card_name {
+    visibility: hidden;
 }
 .card {
     position: relative;
-    height: 215px;
     width: 150px;
+    height: 215px;
     border-radius: 5px;
     border: 2px solid black;
     padding: 10px;
     margin: 21px;
-    background: #c0c0c0;
+    background: #c0c0c0;    
 }
 .card img {
     border-radius: 20px;    
@@ -99,14 +163,31 @@ body {
     margin-left: 90%;
     color: white;
 }
+.card .stat p {
+    padding: 5px;
+    margin-top: 0px;
+    text-align: center;
+}
 .card .mana_cost {
     position: absolute;
     margin-top: -180px;
     margin-left: 140px;
-    background: #2d8efd;
+    clip-path: polygon(25% 0%, 71% 14%, 96% 48%, 61% 100%, 27% 90%, 11% 40%);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.card:nth-child(1) .mana_cost {
+    background: #1338d2;
+}
+.card:nth-child(2) .mana_cost {
+    background: #b90301;
+}
+.card:nth-child(3) .mana_cost {
+    background: #6a02d5;
+}
+.card:nth-child(4) .mana_cost {
+    background: #e67309;
 }
 .card .mana_cost p {
     position: absolute;
@@ -121,21 +202,21 @@ body {
     text-align: center;
     margin: auto;
     margin-top: 0px;
-    font-size: 25px;    
+    font-size: 20px;    
 }
 .card .attack {
     position: absolute;
+    left: -170px;
+    bottom: -20px;
     z-index: 0;
     background: #92901d;
-    margin-left: -20px;
-    margin-top: 0px;
     height: 50px;
     width: 50px;
     font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}   
 .card .attack img {
     position: absolute;
     z-index: 1;
@@ -161,29 +242,75 @@ body {
 }
 .card .health {
     position: absolute;
+    left: -20px;
+    bottom: -20px;
     background: #b31217;
     height: 50px;
     width: 50px;
     font-size: 35px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 900;
-    margin-left: 125px;
-    margin-top: 0px;
 }
-.card .stat p {
-    padding: 5px;
-    margin-top: 0px;
-    text-align: center;
+.enemy_card {
+    background: #ffbdbd;
+}
+.my_card {
+    background: #907ff1;  
+}
+.invisible .mana_cost,
+.invisible .card_name,
+.invisible .attack,
+.invisible .health,
+.invisible img{
+    visibility: hidden;
+}
+.invisible{
+    background: transparent !important;
+    cursor: auto;
+    transition: 0.1s ease;
+    cursor: auto !important;
+}
+.invisible:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+#my_hand .invisible,
+#my_field .invisible{
+    border: 2px dashed blue;
+}
+#enemy_hand .invisible,
+#enemy_field .invisible{
+    border: 2px dashed red;
 }
 .user {
-    padding-left: 3%;
+    position: relative;
+    margin-left: 3%;
     height: 300px;
     width: 200px;
-    position: relative;
+}
+.user .name {
+    position: absolute;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    left: 0;
+}
+#my_name {
+    position: absolute;
+    margin-top: -50px;
+    border: 2px solid blue;
+    background: #7f9af1; 
+    color: blue;
+}
+#enemy_name {
+    position: absolute;
+    top: 285px;
+    border: 2px solid red;
+    background: #ffbdbd;
+    color: red;
 }
 .user img {
     border-radius: 45%;
-    border: 2px solid #a7a7a7;
     position: absolute;
     height: 300px;
     width: 200px;
@@ -210,114 +337,177 @@ body {
 #enemy_hero {
     padding-top: 5px;
 }
-#hero {
+#enemy_hero img {
+    border: 2px solid red;
+}
+#my_hero {
     position: absolute;
     bottom: 10px;
 }
-#hero img {
+#my_hero img {
     position: absolute;
     bottom: 0;
+    border: 2px solid blue; 
 }
 #login-box {
     position: absolute;
     text-align: center;
+    padding-top: 35px;
     margin: 0;
     top: 50%;
+    left: 30px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    margin-left: 10px;
-    padding-top: 5px;
     border-radius: 20%;
-    border: 2px solid black;
-    width: 250px;
-    height: 230px;
+    border: 3px solid black;
     background: #a7a7a7;
+    width: 250px;
+    height: 180px;
+    z-index: 1;
 }
 #login-box .statistic {
     color: yellow;
     font-size: 2em;
 }
-#login-box input[type="submit"] {
+.btn {
     margin-top: 28px;
     width: 140px;
     height: 32px;
     background: #17aa8c;
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     color: #FFF;
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
+    font-weight: bold;
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer;
+    outline: none;
+    z-index: 0;
 }
-#login-box input[type="submit"]:hover {
+.btn:hover:enabled {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     transition: all .2s;
+    color: #ff7a59;
+    border: #ff7a59 solid 1px;
+    background: black;
 }
-#login-box #log_out_btn {
-
+.btn:active:enabled {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
 }
-#resources {
-    position: fixed;
+.btn:disabled,
+.btn[disabled] {
+    cursor: auto;
+}
+.resources {
+    position: absolute;
     text-align: center;
     margin: 0;
     top: 50%;
-    right: 0;
+    right: 60px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);  
     border-radius: 20%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: 3px solid black;
-    height: 150px;
-    width: 150px; 
-}
-#time {
-    position: absolute;
+    background: #a7a7a7;
+    width: 200px;
+    height: 230px;
 }
 #pass {
-    position: absolute;
-    bottom: 20px;  
-}
-/* #pass {
-    position: absolute;
-    //margin: 10px;
-    bottom: 0;
-    width: 100px;
-    height: 50px;
-    background: #f3f0f1;
-    position: relative;
-    border-radius: 32px;
+    width: 140px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    background: #17aa8c;
+    color: white;
     text-align: center;
+    text-transform: uppercase;
+    transition: 0.1s ease;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-    6px 6px 10px rgba(0, 0, 0, 0.2);
-    color: #6f6cde;
+    outline: none;
 }
-#pass label {
-    line-height: 100px;
-    font-family: "Montserrat", sans-serif;
-    font-size: 10px;
-    font-weight: semibold;
-}
-#pass:hover {
-    opacity: 0.3;
-    box-shadow: -6px -6px 10px rgba(255, 255, 255, 0.8),
-        6px 6px 10px rgba(0, 0, 0, 0.2);
-}
-#pass:active {
-    opacity: 1;
-    box-shadow: inset -4px -4px 8px rgba(255, 255, 255, 0.5),
-        inset 8px 8px 16px rgba(0, 0, 0, 0.1);
-    color: #79e3b6;
-} */
 #manna {
     color: aqua;
-    background-color: blue;
-    width: 60px;
-    height: 30px;
+    background-color: blue; 
     text-align: center;
 }
+.deck {
+    position: absolute;
+    float: right;
+    border: 3px solid rgba(0, 0, 0, 1);
+    background: black;
+    margin: 0;
+    -ms-transform: translateY(-20%);
+    transform: translateY(-20%);  
+    right: 60px;
+    width: 171px;
+    height: 235px;
+}
+.deck div {
+    position: absolute;
+    background-image: url(./card_back.png);
+    border: none;
+    width: 171px;
+    height: 235px;
+    background-size: 171px 235px;
+    background-repeat: no-repeat;
+}
+.deck div:nth-child(1) {
+    position: absolute;
+    z-index: 2;
+}
+.deck div:nth-child(2){
+    position: absolute;
+    z-index: 3;
+    transform: translateY(-8px);
+}
+.deck div:nth-child(3){
+    position: absolute;
+    z-index: 4;
+    transform: translateY(-16px);
+}
+.deck div:nth-child(4){
+    position: absolute;
+    z-index: 5;
+    transform: translateY(-24px);
+}
+.deck span {
+    position: absolute;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 10px;
+    z-index: 6;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+#enemy_deck {
+    top: 20%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+#my_deck {
+    bottom: 20%;
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+}
+/* .accelerate {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+} */
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
@@ -326,74 +516,4 @@ body {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
-}
-/*da*/
-.text-box {
-    margin-left: 44vw;
-	 margin-top: 42vh;
-}
-
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-    position: absolute;
-}
-
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.btn-white {
-    background-color: #fff;
-    color: #777;
-}
-
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-
-.btn-white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
-
-.btn-animated {
-    animation: moveInBottom 5s ease-out;
-    animation-fill-mode: backwards;
-}
-
-@keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
 }
