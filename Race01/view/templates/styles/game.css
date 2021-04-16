@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 body {
-    background: url("./background.jpeg");
-    background-position: 0 1%;
-    background-size: 2000px 1500px;
+    background: url("./../background.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     margin: 0;
 }
 .area {
@@ -14,7 +16,7 @@ body {
     justify-content: center;
 }
 #my_area {
-	bottom: 0%;
+	bottom: 0;
 }
 #enemy_area {
     top: 0;
@@ -26,6 +28,7 @@ body {
     font-family: 'New Tegomin', sans-serif;
     float: left;
     position: absolute;
+    backdrop-filter: blur(5px);
 }
 .field img {
     border-radius: 20px;
@@ -57,6 +60,7 @@ body {
     margin-left: 6px;
 }
 #my_field {
+    position: absolute;
     top: 0;
 }
 .my_card {
@@ -87,13 +91,14 @@ body {
     font-family: 'New Tegomin', sans-serif;
     float: left;
     position: absolute;
+    backdrop-filter: blur(10px);
 }
 #my_hand {
     bottom: 0;
     border: 5px dashed blue;
 }
 #my_hand .card {
-    background: #907ff1;
+    background: #6357a8;
     cursor: pointer;
     transition: 0.2s ease;
     transition-property: transform, box-shadow;
@@ -118,7 +123,7 @@ body {
 }
 #enemy_hand .card {
     background: transparent;
-    background-image: url(./card_back.png);
+    background-image: url(./../card_back.png);
     border: none;
     background-size: 171px 235px;
     background-repeat: no-repeat;
@@ -252,10 +257,10 @@ body {
     font-weight: 900;
 }
 .enemy_card {
-    background: #ffbdbd;
+    background: #741c1c;
 }
 .my_card {
-    background: #907ff1;  
+    background: #6357a8;
 }
 .invisible .mana_cost,
 .invisible .card_name,
@@ -284,7 +289,7 @@ body {
 }
 .user {
     position: relative;
-    margin-left: 3%;
+    margin-left: 70px;
     height: 300px;
     width: 200px;
 }
@@ -299,14 +304,14 @@ body {
     position: absolute;
     margin-top: -50px;
     border: 2px solid blue;
-    background: #7f9af1; 
+    background: #6357a8; 
     color: blue;
 }
 #enemy_name {
     position: absolute;
     top: 285px;
     border: 2px solid red;
-    background: #ffbdbd;
+    background: #741c1c;
     color: red;
 }
 .user img {
@@ -335,14 +340,16 @@ body {
     margin-top: -15px;
 }
 #enemy_hero {
-    padding-top: 5px;
+    margin-top: 50px;
+    z-index: 10;
 }
 #enemy_hero img {
     border: 2px solid red;
 }
 #my_hero {
     position: absolute;
-    bottom: 10px;
+    bottom: 50px;
+    z-index: 10;
 }
 #my_hero img {
     position: absolute;
@@ -360,14 +367,19 @@ body {
     transform: translateY(-50%);
     border-radius: 20%;
     border: 3px solid black;
-    background: #a7a7a7;
+    background: #3101b3;
     width: 250px;
     height: 180px;
     z-index: 1;
 }
 #login-box .statistic {
     color: yellow;
-    font-size: 2em;
+    font-family: 'New Tegomin', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+#login-box .statistic span {
+    color: aqua;
 }
 .btn {
     margin-top: 28px;
@@ -404,20 +416,27 @@ body {
 .resources {
     position: absolute;
     text-align: center;
+    padding-top: 20px;
     margin: 0;
     top: 50%;
-    right: 60px;
+    right: 29px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);  
     border-radius: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     border: 3px solid black;
-    background: #a7a7a7;
-    width: 200px;
-    height: 230px;
+    background: #3101b3;
+    width: 250px;
+    height: 170px;
+}
+.resources h2 {
+    color: yellow;
+    margin: 0;
+    font-family: 'New Tegomin', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+#time {
+    color: aqua;
 }
 #pass {
     width: 140px;
@@ -436,7 +455,6 @@ body {
 }
 #manna {
     color: aqua;
-    background-color: blue; 
     text-align: center;
 }
 .deck {
@@ -447,13 +465,13 @@ body {
     margin: 0;
     -ms-transform: translateY(-20%);
     transform: translateY(-20%);  
-    right: 60px;
+    right: 69px;
     width: 171px;
     height: 235px;
 }
 .deck div {
     position: absolute;
-    background-image: url(./card_back.png);
+    background-image: url(./../card_back.png);
     border: none;
     width: 171px;
     height: 235px;
@@ -492,15 +510,82 @@ body {
     font-size: 50px;
 }
 #enemy_deck {
-    top: 20%;
+    top: 220px;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
 #my_deck {
-    bottom: 20%;
+    bottom: 200px;
     -ms-transform: translateY(50%);
     transform: translateY(50%);
 }
+#warning_message {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#warning_message span {
+    color: white;
+    font-family: 'New Tegomin', sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    font-size: 15px;
+    vertical-align: middle;
+}
+#game_over_screen {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    text-align: center;
+}
+#button_holder {
+    display: flex;
+    flex-direction: row;
+}
+#result {
+    position: relative;
+    text-align: center;
+    margin: 0;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    color: white;
+    background-color: #1338d2;
+    border-radius: 10px;
+    width: 10em;
+    height: 2em;
+    font-family: 'New Tegomin', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+#button_holder {  
+    text-align:center;
+    position: relative;
+    margin: auto;
+    /* height: auto; */
+}
+#btn_restart {
+    margin-left: 10px;
+}
+
+#log_out_finish_btn {
+    margin-right: 10px;
+}
+/* #button_holder .btn {
+    margin: 10px;
+    padding: 10px;
+} */
+/* #btn_restart {
+    padding:50px;
+} */
 /* .accelerate {
     -webkit-transform: translateZ(0);
     -moz-transform: translateZ(0);
@@ -516,4 +601,186 @@ body {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+@media screen and (max-height: 1193px), screen and (max-width: 1930px) {
+    .field {
+        transform: scale(0.8);
+    }
+    #my_field {
+        top: -30px;
+    }
+    #enemy_field {
+        bottom: -30px;
+    }
+    .card_wrapper {
+        transform: scale(0.8);  
+    }
+    #my_hand {
+        bottom: -29px;   
+    }
+    #enemy_hand {
+        top: -29px;  
+    }
+    .user {
+        transform: scale(0.8);
+    }
+    #enemy_hero {
+        margin-left: 20px;
+        margin-top: 0px;
+    }
+    #my_hero {
+        margin-left: 20px;
+        bottom: 0px;
+    }
+    #login-box {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%) scale(0.8);
+        top: 50%;
+        left: -3px;
+    }
+    .resources {
+        -ms-transform: translateY(-50%);
+        transform: scale(0.8) translateY(-50%);
+        top: 50%;
+        right: -4px;
+    }
+    .deck {
+        -ms-transform: translateY(-20%) !important;
+        transform: translateY(-20%) scale(0.8) !important;
+        right: 35px;
+    }
+    #enemy_deck {
+        top: 110px;
+    }
+    #my_deck {
+        bottom: 0;
+    }
+}
+@media screen and (max-height: 952px), screen and (max-width: 1535px) {
+    .field {
+        transform: scale(0.6);
+    }
+    #my_field {
+        top: -61px;
+    }
+    #enemy_field {
+        bottom: -61px;
+    }
+    .card_wrapper {
+        transform: scale(0.6);  
+    }
+    #my_hand {
+        bottom: -57px;   
+    }
+    #enemy_hand {
+        top: -58px;  
+    }
+    #login-box {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%) scale(0.6);
+        top: 50%;
+        left: -35px;
+    }
+    .resources {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%) scale(0.6);
+        top: 50%;
+        right: -35px;
+    }
+    .user {
+        transform: scale(0.6);
+    }
+    #enemy_hero {
+        margin-top: -40px;
+        margin-left: -15px;
+    }
+    #my_hero {
+        bottom: -40px;
+        margin-left: -15px;
+    }
+    .deck {
+        -ms-transform: translateY(-20%) !important;
+        transform: translateY(-20%) scale(0.6) !important;
+        right: 5px;
+    }
+    #enemy_deck {
+        top: 70px;
+    }
+    #my_deck {
+        bottom: -40px;
+    }
+}
+@media screen and (max-height: 717px), screen and (max-width: 1222px) {
+    .field {
+        transform: scale(0.4);
+    }
+    #my_field {
+        top: -90px;
+    }
+    #enemy_field {
+        bottom: -90px;
+    }
+    .card_wrapper {
+        transform: scale(0.4);  
+    }
+    #my_hand {
+        bottom: -87px;   
+    }
+    #enemy_hand {
+        top: -87px;  
+    }
+    #login-box {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%) scale(0.4);
+        top: 50%;
+        left: -65px;
+    }
+    .resources {
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%) scale(0.4);
+        top: 50%;
+        right: -65px;
+    }
+    .user {
+        transform: scale(0.4);
+    }
+    #enemy_hero {
+        margin-top: -70px;
+        margin-left: -40px;
+    }
+    #my_hero {
+        bottom: -70px;
+        margin-left: -40px;
+    }
+    .deck {
+        -ms-transform: translateY(-20%) !important;
+        transform: translateY(-20%) scale(0.4) !important;
+        right: -25px;
+    }
+    #enemy_deck {
+        top: 30px;
+    }
+    #my_deck {
+        bottom: -80px;
+    }
+}
+@media screen and (max-height: 477px), screen and (max-width: 768px) {
+    #game_field {
+        display: none;
+    }
+    #warning_message {
+        display: flex;
+    }
+    #game_over_screen {
+        display: none;
+    }
+    #result {
+        display: none;  
+    }
+    #btn_restart {
+        display: none;
+    }
+    #log_out_finish_btn {
+        display: none;
+    }
 }
