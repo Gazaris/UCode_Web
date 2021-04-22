@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+body {
+    font-family: 'Zen Dots', sans-serif;
+    background-color: crimson;
+}
+h1 {
+    color: white;
+}
+.block {
+    padding: 1%;
+    background-color: rgb(18, 18, 18);
+    margin-bottom: 1%;
+    border: 1px solid rgb(104, 104, 104);
+}
+.head {
+    color: white;
+    font-weight: 600;
+}
+.key {
+    color: rgb(0, 195, 255);
+    font-weight: 500;
+}
+.value {
+    color: rgb(64, 193, 64);
+    font-weight: 300;
+}
+.noselect {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
